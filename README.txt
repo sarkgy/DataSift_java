@@ -1,0 +1,13 @@
+In the Concordance.zip and Concordance2.zip, you can find two solutions to read in a document from the standard input and make a concordance which will be printed to the output.
+
+While developing the solution, the following problems and ideas I have come accross:
+	- The most challenging one is the sentence ending punctuations. I had to come up with a solution to count the sentences. The exclamation and question mark were relatively easy to start with. The real problem arised when these were multipled at the same place, like (?! or !!) especially when they have a space between them. Furthermore to this the full stop made it more difficult. 
+	- Thinking of the multiple use of it (...) when it means different than several full stops at the end of a sentence. And the abbreviation ends with full stop too what needs to separated from the end of a sentence.
+	- So I thought I would split up by sentences the document and iterating through them I can just simply count the sentences and put their number with the words. To do this, I have first removed all the punctuations which are not sentence ending related (. ? or !) or can be found inside the words(- and ', like zero-indexed and that's).
+	- With this solution, I have managed to deal with correct documents and when they have more punctuations at the end of one sentence, with optional spaces between them. (!!! or !! !)
+	- I have decided to replace with a space the triple dots (...) to differentiate from full stop. And with the abbreviations, when the next word starts with a capital it will be a new sentence otherwise it is an abbreviation.
+
+There are exceptions to these. For example when an abbreviation is followed by a name starting with capital, the program will assume that is a new sentence. Or when the whole sentence is a question mark only. And most importantly when there is no punctuation at all at the end of a sentence. 
+These cases can be handled with using artificial intelligence or/and building a learning database to help the program. From the database, it could filter the abbreviations and the full stop means that is the end of a sentence.
+It is not easy to deal with every documents, especially with social sites one without these. 
+There are sentences when all words starts with capital, when there are no punctuations at all or when the nouns or/and verbs are (partially) missing. The problem in these cases cannot be tackled in the traditional way when we suppose the correct grammar.
